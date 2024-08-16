@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spiderman_delivery/drop_location.dart';
+import 'package:spiderman_delivery/dashboard.dart';
 class PickLocation extends StatelessWidget {
   const PickLocation({super.key});
 
@@ -13,7 +14,10 @@ class PickLocation extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 80, left: 20, right: 20),
                 child: Row(
                   children: [
-                    Icon(Icons.arrow_back_ios),
+                    IconButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Dashboard(),
+              ));
+                  }, icon: Icon(Icons.arrow_back_ios),),
                     Padding(
                       padding: const EdgeInsets.only(left: 60),
                       child: Text(

@@ -3,6 +3,7 @@ import 'package:spiderman_delivery/change_password.dart';
 import 'package:spiderman_delivery/profile_details.dart';
 import 'package:spiderman_delivery/settings.dart';
 import 'package:spiderman_delivery/signin.dart';
+import 'package:spiderman_delivery/dashboard.dart';
 class Profile extends StatelessWidget {
   const Profile({super.key});
 
@@ -22,7 +23,10 @@ class Profile extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 80, left: 30, right: 20),
                 child: Row(
                   children: [
-                    Icon(Icons.arrow_back_ios, color: Colors.white,),
+                   IconButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Dashboard(),
+              ));
+                  }, icon: Icon(Icons.arrow_back_ios, color: Colors.white,),),
                     Padding(
                       padding: const EdgeInsets.only(left: 85),
                       

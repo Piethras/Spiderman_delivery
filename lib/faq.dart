@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spiderman_delivery/dashboard.dart';
 class Faq extends StatefulWidget {
   const Faq({super.key});
 
@@ -16,7 +17,10 @@ class _FaqState extends State<Faq> {
               padding: const EdgeInsets.only(top: 80, left: 30, right: 20),
               child: Row(
                 children: [
-                  Icon(Icons.arrow_back_ios),
+                  IconButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Dashboard(),
+              ));
+                  }, icon: Icon(Icons.arrow_back_ios),),
                   Padding(
                     padding: const EdgeInsets.only(left: 55),
                     child: Text(
@@ -47,10 +51,9 @@ class _FaqState extends State<Faq> {
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 10, top: 10),
-                                child: TextField(
-                                  decoration: InputDecoration(hintText: 'How do I place an order?', border: InputBorder.none),
-                                ),
+                                padding: const EdgeInsets.only(right: 20),
+                                child: TextButton(onPressed: (){}, 
+                                child: Text('How do I place an order?', style: TextStyle(color: Colors.black, fontSize: 16),)),
                               ),
                             ),
                             SizedBox(width: 30,),
@@ -75,13 +78,14 @@ class _FaqState extends State<Faq> {
                         ),
                         ] 
                         ),
-                        child: Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 10, top: 10),
-                            child: TextField(
-                              decoration: InputDecoration(hintText: 'How long does it to deliver a product?', border: InputBorder.none),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: TextButton(onPressed: (){}, 
+                              child: Text('How long does it take to deliver a product?', style: TextStyle(color: Colors.black, fontSize: 16),)),
                             ),
-                          ),
+                            IconButton(onPressed: (){}, icon: Icon(Icons.arrow_drop_down, color: Colors.red,))
+                          ],
                         ),
                         ),
                       ),
@@ -101,13 +105,17 @@ class _FaqState extends State<Faq> {
                         ),
                         ] 
                         ),
-                        child: Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 10, top: 10),
-                            child: TextField(
-                              decoration: InputDecoration(hintText: 'How can I track my order?', border: InputBorder.none),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 50),
+                                child: TextButton(onPressed: (){}, 
+                                child: Text('How can I track my order?', style: TextStyle(color: Colors.black, fontSize: 16),)),
+                              ),
                             ),
-                          ),
+                            IconButton(onPressed: (){}, icon: Icon(Icons.arrow_drop_down, color: Colors.red,))
+                          ],
                         ),
                         ),
                       ),

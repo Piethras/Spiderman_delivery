@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spiderman_delivery/profile.dart';
 class Settings extends StatefulWidget {
   const Settings({super.key});
 
@@ -19,7 +20,10 @@ class _SettingsState extends State<Settings> {
               padding: const EdgeInsets.only(top: 80, left: 30, right: 20),
               child: Row(
                 children: [
-                  Icon(Icons.arrow_back_ios),
+                  IconButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Profile(),
+              ));
+                  }, icon: Icon(Icons.arrow_back_ios),),
                   Padding(
                     padding: const EdgeInsets.only(left: 85),
                     child: Text(

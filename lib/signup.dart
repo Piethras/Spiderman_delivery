@@ -186,6 +186,7 @@ class _SignUpState extends State<SignUp> {
                         child: Padding(
                           padding: const EdgeInsets.only(left: 20, top: 10),
                           child: TextField(
+                            obscureText: _isObscure,
                             decoration: InputDecoration(
                                 hintText: 'Password', border: InputBorder.none),
                           ),
@@ -196,7 +197,7 @@ class _SignUpState extends State<SignUp> {
                         setState(() {
                           _isObscure = !_isObscure;
                         });
-                      }, icon: Icon(_isObscure? Icons.visibility: Icons.visibility_off)),
+                      }, icon: Icon(_isObscure? Icons.visibility_off: Icons.visibility)),
                     ],
                   ),
                 ),

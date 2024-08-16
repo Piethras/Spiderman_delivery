@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spiderman_delivery/reset_password.dart';
 class ResetPassword2 extends StatelessWidget {
   const ResetPassword2({super.key});
 
@@ -11,7 +12,10 @@ class ResetPassword2 extends StatelessWidget {
             padding: const EdgeInsets.only(top: 80, left: 30, right: 20),
             child: Row(
               children: [
-                Icon(Icons.arrow_back_ios),
+                IconButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => ResetPassword(),
+              ));
+                  }, icon: Icon(Icons.arrow_back_ios),),
                 Padding(
                   padding: const EdgeInsets.only(left:50),
                   child: Text(

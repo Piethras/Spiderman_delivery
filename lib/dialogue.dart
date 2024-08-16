@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:spiderman_delivery/chats.dart';
+import 'package:spiderman_delivery/calls.dart';
 class Dialogue extends StatelessWidget {
   const Dialogue({super.key});
 
@@ -10,10 +12,13 @@ class Dialogue extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-                  padding: const EdgeInsets.only(top: 50, left: 30, right: 20),
+                  padding: const EdgeInsets.only(top: 50, right: 20),
                   child: Row(
                     children: [
-                      Icon(Icons.arrow_back_ios),
+                      IconButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Chats(),
+              ));
+                  }, icon: Icon(Icons.arrow_back_ios),),
                       SizedBox(width: 20,),
                       CircleAvatar(backgroundImage: AssetImage('assets/face.jpg'),),
                       SizedBox(width: 10,),
@@ -22,7 +27,10 @@ class Dialogue extends StatelessWidget {
                         style: TextStyle(fontSize: 17),
                       ),
                       SizedBox(width: 70,),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.phone, color: Colors.red,)),
+                      IconButton(onPressed: (){
+                         Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Calls(),
+              ));
+                      }, icon: Icon(Icons.phone, color: Colors.red,)),
                       IconButton(onPressed: (){}, icon: Icon(Icons.video_call, color: Colors.red,)),
         
                     ],

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:spiderman_delivery/new_offer.dart';
+import 'package:spiderman_delivery/drop_location.dart';
 class PackageInformation extends StatelessWidget {
   const PackageInformation({super.key});
 
@@ -15,7 +16,10 @@ class PackageInformation extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 80, left: 20, right: 20),
                   child: Row(
                     children: [
-                      Icon(Icons.arrow_back_ios),
+                      IconButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => DropLocation(),
+              ));
+                  }, icon: Icon(Icons.arrow_back_ios),),
                       Padding(
                         padding: const EdgeInsets.only(left: 60),
                         child: Text(
@@ -133,8 +137,14 @@ class PackageInformation extends StatelessWidget {
                       ),
                       SizedBox(height: 20,),
                       Padding(
-                        padding: const EdgeInsets.only(right: 180),
-                        child: Text('Vehicle Preferences', style: TextStyle(fontWeight: FontWeight.bold),),
+                        padding: const EdgeInsets.only(left: 20),
+                        child: Row(
+                          children: [
+                            Text('Vehicle Preferences', style: TextStyle(fontWeight: FontWeight.bold),),
+                            SizedBox(width: MediaQuery.sizeOf(context).width*0.43,),
+                            Icon(Icons.more_vert, color: Colors.red,),
+                          ],
+                        ),
                       ),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,

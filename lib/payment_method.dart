@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:spiderman_delivery/save_places.dart';
+import 'package:spiderman_delivery/new_offer.dart';
 class PaymentMethod extends StatefulWidget {
   const PaymentMethod({super.key});
 
@@ -20,10 +21,13 @@ class _PaymentMethodState extends State<PaymentMethod> {
       body: Column(
         children: [
           Padding(
-              padding: const EdgeInsets.only(top: 80, left: 30, right: 20),
+              padding: const EdgeInsets.only(top: 60, left: 30, right: 20),
               child: Row(
                 children: [
-                  Icon(Icons.arrow_back_ios),
+                  IconButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => NewOffer(),
+              ));
+                  }, icon: Icon(Icons.arrow_back_ios),),
                   Padding(
                     padding: const EdgeInsets.only(left: 55),
                     child: Text(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:spiderman_delivery/reset_password.dart';
 import 'package:spiderman_delivery/signup.dart';
 import 'package:spiderman_delivery/dashboard.dart';
+import 'package:spiderman_delivery/welcome.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -22,7 +23,11 @@ class _SignInState extends State<SignIn> {
               padding: const EdgeInsets.only(top: 80, left: 30, right: 20),
               child: Row(
                 children: [
-                  Icon(Icons.arrow_back_ios),
+                  IconButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Welcome(),
+              ));
+                  }, icon: Icon(Icons.arrow_back_ios),),
+                  
                   Padding(
                     padding: const EdgeInsets.only(left: 85),
                     child: Text(
@@ -113,6 +118,7 @@ class _SignInState extends State<SignIn> {
                         child: Padding(
                           padding: const EdgeInsets.only(left: 20, top: 10),
                           child: TextField(
+                            obscureText: _isObscure,
                             decoration: InputDecoration(
                                 hintText: 'Password', border: InputBorder.none),
                           ),
@@ -137,7 +143,7 @@ class _SignInState extends State<SignIn> {
               ));
             }, child: Padding(
               padding: const EdgeInsets.only(left: 155),
-              child: Text('Forgot your password?'),
+              child: Text('Forgot your password?', style: TextStyle(color: Colors.black),),
             ),),
             
             SizedBox(height: 40,),

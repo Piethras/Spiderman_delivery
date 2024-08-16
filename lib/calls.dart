@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
-class Calls extends StatelessWidget {
+import 'package:spiderman_delivery/dialogue.dart';
+class Calls extends StatefulWidget {
   const Calls({super.key});
 
+  @override
+  State<Calls> createState() => _CallsState();
+}
+
+class _CallsState extends State<Calls> {
+  bool _isPressed = false;
+  bool _isTouched = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,14 +52,28 @@ class Calls extends StatelessWidget {
             padding: const EdgeInsets.only(top: 500, left: 40, right: 40),
             child: Row(
               children: [
-                CircleAvatar(child: IconButton(onPressed: (){}, 
-                icon: Icon(Icons.volume_up_rounded, color: Colors.white,),),backgroundColor: Colors.green,),
+                CircleAvatar(child: IconButton(onPressed: (){
+                  setState(() {
+                    _isPressed = !_isPressed;
+                  });
+                }, 
+                icon: _isPressed? Icon(Icons.volume_up_rounded, color: Colors.white,):Icon(Icons.volume_off_rounded, color: Colors.white,),),
+                backgroundColor: Colors.green,),
                 SizedBox(width: 65,),
-                CircleAvatar(child: IconButton(onPressed: (){}, 
-                icon: Icon(Icons.mic, color: Colors.white,),),backgroundColor: Colors.green,),
+                CircleAvatar(child: IconButton(onPressed: (){
+                  setState(() {
+                    _isTouched = !_isTouched;
+                  });
+                }, 
+                icon: _isTouched? Icon(Icons.mic, color: Colors.white,): Icon(Icons.mic_off_rounded, color: Colors.white,),),
+                backgroundColor: Colors.green,),
                 SizedBox(width: 65,),
-                CircleAvatar(child: IconButton(onPressed: (){}, 
-                icon: Icon(Icons.phone_missed_rounded, color: Colors.white,),),backgroundColor: Colors.red,),
+                CircleAvatar(child: IconButton(onPressed: (){
+                   Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Dialogue(),
+              ));
+                }, 
+                icon: Icon(Icons.phone_missed_rounded, color: Colors.white,),),
+                backgroundColor: Colors.red,),
               ],
             ),
           )

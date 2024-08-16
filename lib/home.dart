@@ -9,6 +9,7 @@ import 'package:spiderman_delivery/calls.dart';
 import 'package:spiderman_delivery/save_places.dart';
 import 'package:spiderman_delivery/settings.dart';
 import 'package:spiderman_delivery/signin.dart';
+import 'package:spiderman_delivery/dashboard.dart';
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -53,7 +54,10 @@ class _HomeState extends State<Home> {
                     padding: const EdgeInsets.only(top: 50),
                     child: Row(
                       children: [
-                        IconButton(onPressed: (){}, icon: Icon(Icons.close)),
+                        IconButton(onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Dashboard(),
+              ));
+                        }, icon: Icon(Icons.close)),
                         SizedBox(width: 40,),
                         Text('Menu', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
                         
@@ -264,8 +268,12 @@ class _HomeState extends State<Home> {
                           )
                         ],
                       ),
-                      SizedBox(width: 60,),
-                      Icon(Icons.arrow_forward_ios, color: Colors.red,),
+                      SizedBox(width: 40,),
+                      IconButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => PickLocation(),
+              ));
+                  }, icon: Icon(Icons.arrow_forward_ios, color: Colors.red,),),
+                      
                     ],
                   ),
                   ),

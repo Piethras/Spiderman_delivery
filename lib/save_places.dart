@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spiderman_delivery/payment_method.dart';
 class SavePlaces extends StatelessWidget {
   const SavePlaces({super.key});
 
@@ -8,10 +9,13 @@ class SavePlaces extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-              padding: const EdgeInsets.only(top: 80, left: 30, right: 20),
+              padding: const EdgeInsets.only(top: 60, left: 30, right: 20),
               child: Row(
                 children: [
-                  Icon(Icons.arrow_back_ios),
+                  IconButton(onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => PaymentMethod(),
+              ));
+                  }, icon: Icon(Icons.arrow_back_ios),),
                   Padding(
                     padding: const EdgeInsets.only(left: 55),
                     child: Text(
@@ -40,10 +44,8 @@ class SavePlaces extends StatelessWidget {
                         ),
                         child: Expanded(
                           child: Padding(
-                            padding: const EdgeInsets.only(left: 10, top: 10),
-                            child: TextField(
-                              decoration: InputDecoration(hintText: 'PK 14', border: InputBorder.none),
-                            ),
+                            padding: const EdgeInsets.only(top: 5, right: 250),
+                            child: TextButton(onPressed: (){}, child: Text('PK 14', style: TextStyle(color: Colors.black),))
                           ),
                         ),
                         ),
@@ -66,10 +68,8 @@ class SavePlaces extends StatelessWidget {
                         ),
                         child: Expanded(
                           child: Padding(
-                            padding: const EdgeInsets.only(left: 10, top: 10),
-                            child: TextField(
-                              decoration: InputDecoration(hintText: 'Bonammoussadi', border: InputBorder.none),
-                            ),
+                            padding: const EdgeInsets.only(top: 5, right: 188),
+                            child: TextButton(onPressed: (){}, child: Text('Bonammoussadi', style: TextStyle(color: Colors.black),))
                           ),
                         ),
                         ),
@@ -92,10 +92,8 @@ class SavePlaces extends StatelessWidget {
                         ),
                         child: Expanded(
                           child: Padding(
-                            padding: const EdgeInsets.only(left: 10, top: 10),
-                            child: TextField(
-                              decoration: InputDecoration(hintText: 'Bonapriso', border: InputBorder.none),
-                            ),
+                            padding: const EdgeInsets.only(top: 5, right: 230),
+                            child: TextButton(onPressed: (){}, child: Text('Bonapriso', style: TextStyle(color: Colors.black),))
                           ),
                         ),
                         ),
